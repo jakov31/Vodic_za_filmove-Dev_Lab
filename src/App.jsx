@@ -1,7 +1,10 @@
+import { RouterProvider } from "react-router-dom";
+import routes from "./routes/routes";
+
 function App() {
   return (
     <>
-      <p>Vodič za filmove</p>
+      <RouterProvider router={routes} />
     </>
   );
 }
