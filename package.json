@@ -13,16 +13,9 @@
     "axios": "^1.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-<<<<<<< HEAD
-<<<<<<< HEAD
+
     "react-router-dom": "^6.16.0",
     "tailwind": "^4.0.0"
-=======
-    "react-router-dom": "^6.16.0"
->>>>>>> 448b84d50726bd47725620a693b1a136a7c5d2a9
-=======
-    "react-router-dom": "^6.16.0"
->>>>>>> 448b84d50726bd47725620a693b1a136a7c5d2a9
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
