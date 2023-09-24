@@ -1,10 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
-// import Header from "../layout/Header";
 import Layout from "../layout/Layout";
 import AboutUs from "../pages/AboutUs";
 import Custom from "../pages/Custom";
 import Home from "../pages/Home";
-import List from "../pages/List";
+import List from "../pages/List/List";
+import Login from "../pages/Login/Login";
+import SignIn from "../pages/SignIn/Signin";
+import UserProfile from "../pages/UserProfile/UserProfile";
 
 const routes = createBrowserRouter([
   {
@@ -15,8 +17,11 @@ const routes = createBrowserRouter([
       { path: "list", element: <List /> },
       { path: "custom", element: <Custom /> },
       { path: "aboutUs", element: <AboutUs /> },
+      { path: "userProfile", element: <UserProfile /> },
     ],
   },
+  { path: "login", element: <Login /> },
+  { path: "register", element: <SignIn /> },
 ]);
 
 export default routes;

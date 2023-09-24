@@ -1,10 +1,10 @@
-// import { Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 import HeaderLinkButton from "./HeaderLinkButton";
 
 const Header = () => {
   return (
     <>
-      <nav className=" flex justify-between content-center p-[20px] w-[100%] bg-green-300">
+      <nav className="w-full flex justify-between content-center p-[20px]  bg-green-300">
         <div>Logo</div>
         <div className="flex justify-between w-[60%]">
           <HeaderLinkButton linkText={"Home"} to={"home"} />
@@ -14,9 +14,8 @@ const Header = () => {
           <HeaderLinkButton linkText={"padajuçi meni"} />
         </div>
 
-        <div>profil</div>
+        <Link to={"userProfile"}>profil</Link>
       </nav>
-      {/* <Outlet /> */}
     </>
   );
 };
