@@ -14,7 +14,7 @@ const routes = createBrowserRouter([
     element: <Layout />,
     children: [
       { path: "home", element: <Home /> },
-      { path: "list", element: <List /> },
+      { path: "movies", element: <List /> },
       { path: "custom", element: <Custom /> },
       { path: "aboutUs", element: <AboutUs /> },
       { path: "userProfile", element: <UserProfile /> },

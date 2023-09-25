@@ -1,55 +1,53 @@
+import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import ButtonClassic from "../../components/ButtonClassic";
+import InputForm from "../../components/InputForm";
 
 const Login = () => {
+  const [loginData, setLoginData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const loginDataHandler = (e) => {
+    const { name, value } = e.target;
+    setLoginData((prevValue) => ({ ...prevValue, [name]: value }));
+  };
+
   const submitLoginHandler = (event) => {
     event.preventDefault();
-    console.log("login");
+    console.log("login", loginData);
   };
 
   return (
     <div className="flex justify-center mt-[10%]  mx-auto w-[90%]">
-      <form
-        onSubmit={submitLoginHandler}
-        className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
-      >
-        <div className="mb-4">
-          <label
-            className="block text-gray-700 text-sm font-bold mb-2"
-            htmlFor="username"
-          >
-            Username
-          </label>
-          <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="username"
-            type="text"
-            placeholder="Username"
+      <form onSubmit={submitLoginHandler} className="w-full max-w-lg">
+        <div className="flex flex-wrap -mx-3 mb-6">
+          <InputForm
+            name={"email"}
+            labelText={"Email"}
+            placeholder="aaaaa@gmail.com"
+            type={"email"}
+            design={" md:w-1/2"}
+            onChange={loginDataHandler}
           />
-        </div>
-        <div className="mb-6">
-          <label
-            className="block text-gray-700 text-sm font-bold mb-2"
-            htmlFor="password"
-          >
-            Password
-          </label>
-          <input
-            className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-            id="password"
+          <InputForm
+            name={"password"}
+            labelText={"Password"}
+            placeholder={"******************"}
             type="password"
-            placeholder="******************"
+            design={" md:w-1/2"}
+            onChange={loginDataHandler}
           />
-          <p className="text-red-500 text-xs italic">
-            Please choose a password.
-          </p>
         </div>
         <div className="flex items-center justify-between">
-          <button
+          {/* <button
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="submit"
           >
             Sign In
-          </button>
+          </button> */}
+          <ButtonClassic buttonText={"Sign in"} type="button" />
           <NavLink to={"/register"}>
             <button
               type="button"

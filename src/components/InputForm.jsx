@@ -1,6 +1,13 @@
-const InputForm = ({ labelText, type, placeholder, design }) => {
+const InputForm = ({
+  labelText,
+  type,
+  placeholder,
+  design,
+  onChange,
+  name,
+}) => {
   return (
-    <div className={`w-full px-3 mb-6 md:mb-0 ${design}`}>
+    <div className={`w-full px-3 mb-6 md:mb-4 ${design}`}>
       <label
         className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
         htmlFor={labelText}
@@ -12,6 +19,8 @@ const InputForm = ({ labelText, type, placeholder, design }) => {
         id={labelText}
         type={type}
         placeholder={placeholder}
+        onChange={onChange}
+        name={name}
       />
       {/* <p className="text-red-500 text-xs italic">
               Please fill out this field.
