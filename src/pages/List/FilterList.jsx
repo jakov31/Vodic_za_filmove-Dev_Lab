@@ -6,6 +6,7 @@ const FilterList = ({ onFilter }) => {
   const [nameFilterisCheked, setNameFilterIsChecked] = useState(true);
   const [isCheked2, setIsChecked2] = useState(false);
   const [isCheked3, setIsChecked3] = useState(false);
+  const [rangeInputValue, setRangeInputValue] = useState(1);
 
   const searchInputHandler = (event) => {
     return setSearchInputValue(event.target.value);
@@ -23,6 +24,11 @@ const FilterList = ({ onFilter }) => {
   console.log(nameFilterisCheked, "by name");
   console.log(isCheked2, "filter 2");
   console.log(isCheked3, "filter 3");
+
+  const handleRatingChange = (event) => {
+    const newRating = parseInt(event.target.value);
+    setRangeInputValue(newRating);
+  };
 
   console.log(searchInputValue);
   onFilter(searchInputValue);
@@ -62,6 +68,16 @@ const FilterList = ({ onFilter }) => {
             checked={isCheked3}
             onChange={handleCheckbox3Change}
           />
+        </div>
+        <div className="ml-3">
+          <input
+            onChange={handleRatingChange}
+            type={"range"}
+            min={"1"}
+            max={"10"}
+            defaultValue={rangeInputValue}
+          />
+          <label className="ml-3 font-bold">{rangeInputValue}</label>
         </div>
       </div>
     </div>
