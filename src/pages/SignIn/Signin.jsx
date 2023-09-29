@@ -29,7 +29,7 @@ const SignIn = () => {
   };
 
   return (
-    <div className="flex justify-center mt-[10%]  mx-auto w-[90%]">
+    <div className="flex justify-center my-[10%]  mx-auto w-[90%]">
       <form onSubmit={submitFormHandler} className="w-full max-w-lg">
         <div className="flex flex-wrap -mx-3 mb-6">
           <InputForm

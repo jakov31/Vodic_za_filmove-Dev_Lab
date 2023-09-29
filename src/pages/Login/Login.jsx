@@ -20,9 +20,9 @@ const Login = () => {
   };
 
   return (
-    <div className="flex justify-center mt-[10%]  mx-auto w-[90%]">
+    <div className="flex justify-center mt-[10%] mx-auto w-[90%]">
       <form onSubmit={submitLoginHandler} className="w-full max-w-lg">
-        <div className="flex flex-wrap -mx-3 mb-6">
+        <div className="flex flex-wrap -mx-3">
           <InputForm
             name={"email"}
             labelText={"Email"}
@@ -47,7 +47,7 @@ const Login = () => {
           >
             Sign In
           </button> */}
-          <ButtonClassic buttonText={"Sign in"} type="button" />
+          <ButtonClassic buttonText={"Sign in"} type="submit" />
           <NavLink to={"/register"}>
             <button
               type="button"

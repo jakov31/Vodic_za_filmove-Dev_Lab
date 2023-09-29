@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
 import HeaderLinkButton from "./HeaderLinkButton";
 import { useState } from "react";
+import HeaderDropDown from "./HeaderDropDown";
 
 const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -15,7 +16,7 @@ const Header = () => {
       <nav className="w-full flex justify-between content-center p-[20px]  bg-[#c11919]">
         <div>Logo</div>
         <div className="flex justify-between w-3/5">
-          <HeaderLinkButton linkText={"Home"} to={"home"} />
+          <HeaderLinkButton linkText={"Home"} to={"/"} />
           <div>
             <HeaderLinkButton
               linkText={"Movies"}
@@ -23,11 +24,7 @@ const Header = () => {
               mouseIn={toggleDropdown}
               mouseOut={toggleDropdown}
             />
-            {isDropdownOpen && (
-              <p className="absolute top rounded-full mt-2 bg-white border border-gray-300 shadow-md p-2">
-                isDropdownOpen
-              </p>
-            )}
+            {isDropdownOpen && <HeaderDropDown toggleDropdown={toggleDropdown} />}
           </div>
           <HeaderLinkButton linkText={"Custom"} to={"custom"} />
           <HeaderLinkButton linkText={"About us"} to={"aboutUs"} />

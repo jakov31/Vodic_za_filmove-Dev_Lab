@@ -13,7 +13,7 @@ const routes = createBrowserRouter([
     path: "/",
     element: <Layout />,
     children: [
-      { path: "home", element: <Home /> },
+      { element: <Home />, index: true },
       { path: "movies", element: <List /> },
       { path: "custom", element: <Custom /> },
       { path: "aboutUs", element: <AboutUs /> },
@@ -22,6 +22,7 @@ const routes = createBrowserRouter([
   },
   { path: "login", element: <Login /> },
   { path: "register", element: <SignIn /> },
+  { path: "*", element: <p>404</p> },
 ]);
 
 export default routes;
