@@ -1,22 +1,40 @@
-// import { Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { FaUserCircle } from "react-icons/fa";
 import HeaderLinkButton from "./HeaderLinkButton";
+import { useState } from "react";
+import HeaderDropDown from "./HeaderDropDown";
 
 const Header = () => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen((prev) => !prev);
+  };
+
   return (
     <>
-      <nav className=" flex justify-between content-center p-[20px] w-[100%] bg-green-300">
+      <nav className="w-full flex justify-between content-center p-[20px]  bg-[#c11919]">
         <div>Logo</div>
-        <div className="flex justify-between w-[60%]">
-          <HeaderLinkButton linkText={"Home"} to={"home"} />
-          <HeaderLinkButton linkText={"List"} to={"list"} />
+        <div className="flex justify-between w-3/5">
+          <HeaderLinkButton linkText={"Home"} to={"/"} />
+          <div>
+            <HeaderLinkButton
+              linkText={"Movies"}
+              to={"movies"}
+              mouseIn={toggleDropdown}
+              mouseOut={toggleDropdown}
+            />
+            {isDropdownOpen && <HeaderDropDown toggleDropdown={toggleDropdown} />}
+          </div>
           <HeaderLinkButton linkText={"Custom"} to={"custom"} />
           <HeaderLinkButton linkText={"About us"} to={"aboutUs"} />
-          <HeaderLinkButton linkText={"padajuçi meni"} />
         </div>
 
-        <div>profil</div>
+        <Link to={"userProfile"}>
+          <FaUserCircle className="w-7" />
+          <p>@username</p>
+        </Link>
       </nav>
-      {/* <Outlet /> */}
     </>
   );
 };

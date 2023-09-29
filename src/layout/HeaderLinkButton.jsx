@@ -1,10 +1,21 @@
 import { NavLink } from "react-router-dom";
 
-const HeaderLinkButton = ({ linkText, to }) => {
+const HeaderLinkButton = ({ linkText, to, mouseIn, mouseOut }) => {
   return (
-    <div className="px-[25px] py-[10px] border-2 rounded-md  bg-green-200 border-green-800">
-      <NavLink to={to}>{linkText}</NavLink>
-    </div>
+    <>
+      <div
+        onMouseEnter={mouseIn}
+        onMouseLeave={mouseOut}
+        className="block py-2 pl-3 pr-4 text-gray-900 rounded md:hover:bg-transparent md:border-0 md:hover:text-white md:p-0 dark:text-white md:hover:underline md:dark:hover:text-white-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+      >
+        <NavLink
+          className={({ isActive }) => (isActive ? "text-white underline" : "")}
+          to={to}
+        >
+          {linkText}
+        </NavLink>
+      </div>
+    </>
   );
 };
 
