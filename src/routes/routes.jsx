@@ -7,6 +7,7 @@ import List from "../pages/List/List";
 import Login from "../pages/Login/Login";
 import SignIn from "../pages/SignIn/Signin";
 import UserProfile from "../pages/UserProfile/UserProfile";
+import ModalWindow from "../pages/UI/ModalWindow";
 
 const routes = createBrowserRouter([
   {
@@ -23,6 +24,7 @@ const routes = createBrowserRouter([
   { path: "login", element: <Login /> },
   { path: "register", element: <SignIn /> },
   { path: "*", element: <p>404</p> },
+  { path:"details", element:<ModalWindow/>}
 ]);
 
 export default routes;
