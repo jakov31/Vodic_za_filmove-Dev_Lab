@@ -14,21 +14,13 @@ const Header = () => {
 
   return (
     <>
-      <nav className="w-full flex justify-between content-center p-[20px]  bg-[#c11919]">
+      <nav className=" flex justify-between content-center p-[20px] w-[100%] bg-green-300">
         <div>
-            
+        <img  className="w-[50px] ml-[auto]" src="./assets/movie-svgrepo-com.svg" alt="Logo"/>
         </div>
-        <div className="flex justify-between w-3/5">
-          <HeaderLinkButton linkText={"Home"} to={"/"} />
-          <div>
-            <HeaderLinkButton
-              linkText={"Movies"}
-              to={"movies"}
-              mouseIn={toggleDropdown}
-              mouseOut={toggleDropdown}
-            />
-            {isDropdownOpen && <HeaderDropDown toggleDropdown={toggleDropdown} />}
-          </div>
+        <div className="flex justify-evenly w-[60%]">
+          <HeaderLinkButton linkText={"Home"} to={"home"} />
+          <HeaderLinkButton linkText={"List"} to={"list"} />
           <HeaderLinkButton linkText={"Custom"} to={"custom"} />
           <HeaderLinkButton linkText={"About us"} to={"aboutUs"} />
         </div>
