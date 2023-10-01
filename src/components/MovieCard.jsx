@@ -1,8 +1,8 @@
 import React from 'react';
 
-const MovieCard = ({ movie }) => {
+const MovieCard = ({ movie, onClick }) => {
   return (
-    <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+    <div onClick={onClick} className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
       <div className="md:flex">
         <div className="md:flex-shrink-0">
           <img
