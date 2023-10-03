@@ -20,7 +20,7 @@ const Header = () => {
         </div>
         <div className="flex justify-evenly w-[60%]">
           <HeaderLinkButton linkText={"Home"} to={"home"} />
-          <HeaderLinkButton linkText={"List"} to={"list"} />
+          <HeaderLinkButton linkText={"List"} to={"movies"} />
           <HeaderLinkButton linkText={"Custom"} to={"custom"} />
           <HeaderLinkButton linkText={"About us"} to={"aboutUs"} />
         </div>
