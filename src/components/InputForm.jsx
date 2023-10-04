@@ -5,6 +5,7 @@ const InputForm = ({
   design,
   onChange,
   name,
+  value,
 }) => {
   return (
     <div className={`w-full px-3 mb-6 md:mb-4 ${design}`}>
@@ -21,6 +22,7 @@ const InputForm = ({
         placeholder={placeholder}
         onChange={onChange}
         name={name}
+        value={value}
       />
       {/* <p className="text-red-500 text-xs italic">
               Please fill out this field.

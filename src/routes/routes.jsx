@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "../layout/Layout";
 import AboutUs from "../pages/AboutUs";
-import Custom from "../pages/Custom";
+import ContactUs from "../pages/ContactUs/ContactUs";
 import Home from "../pages/Home";
 import List from "../pages/List/List";
 import Login from "../pages/Login/Login";
@@ -16,8 +16,8 @@ const routes = createBrowserRouter([
     children: [
       { path:"home",element: <Home />, index: true },
       { path: "movies", element: <List /> },
-      { path: "custom", element: <Custom /> },
       { path: "aboutUs", element: <AboutUs /> },
+      { path: "contactUs", element: <ContactUs /> },
       { path: "userProfile", element: <UserProfile /> },
     ],
   },
