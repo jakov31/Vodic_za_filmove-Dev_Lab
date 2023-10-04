@@ -24,10 +24,12 @@ const Header = () => {
               mouseIn={toggleDropdown}
               mouseOut={toggleDropdown}
             />
-            {isDropdownOpen && <HeaderDropDown toggleDropdown={toggleDropdown} />}
+            {isDropdownOpen && (
+              <HeaderDropDown toggleDropdown={toggleDropdown} />
+            )}
           </div>
-          <HeaderLinkButton linkText={"Custom"} to={"custom"} />
           <HeaderLinkButton linkText={"About us"} to={"aboutUs"} />
+          <HeaderLinkButton linkText={"Contact us"} to={"contactUs"} />
         </div>
 
         <Link to={"userProfile"}>
