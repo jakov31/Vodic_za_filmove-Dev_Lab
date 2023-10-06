@@ -1,32 +1,34 @@
-import axios from 'axios';
-
+import axios from "axios";
+const token = "s";
 export const axiosInstance = axios.create({
-  baseURL: 'https://rickandmortyapi.com/api',
-  timeout: 5000,
+  baseURL: "https://zeljko001.pythonanywhere.com",
+  // timeout: 5000,
   headers: {
-    'Content-Type': 'application/json',
+    "Content-Type": "application/json",
   },
 });
 
 axiosInstance.interceptors.request.use(
-    request => {
-      // console.log('Starting Request', JSON.stringify(request, null, 2));
-      return request;
-    },
-    error => {
-      console.error('Request Error:', error);
-  
-      return Promise.reject(error);
-    }
-  );
-  
-  axiosInstance.interceptors.response.use(
-    response => {
-      // console.log('Response:', JSON.stringify(response, null, 2));
-      return response;
-    },
-    error => {
-      console.error('Response Error:', error);
-      return Promise.reject(error);
-    }
-  );
+  (request) => {
+    // console.log('Starting Request', JSON.stringify(request, null, 2));
+    return request;
+  },
+  (error) => {
+    console.error("Request Error:", error);
+
+    return Promise.reject(error);
+  }
+);
+
+axiosInstance.interceptors.response.use(
+  (response) => {
+    // console.log('Response:', JSON.stringify(response, null, 2));
+    return response;
+  },
+  (error) => {
+    console.error("Response Error:", error);
+    return Promise.reject(error);
+  }
+);
+
+// Authorization: `Bearer ${token ? token : tokenFirst}`,

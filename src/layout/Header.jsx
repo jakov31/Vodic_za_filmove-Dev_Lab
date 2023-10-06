@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { FaUserCircle } from "react-icons/fa";
+import { FaCaretDown } from "react-icons/fa";
 import HeaderLinkButton from "./HeaderLinkButton";
 import { useState } from "react";
 import HeaderDropDown from "./HeaderDropDown";
@@ -12,19 +12,51 @@ const Header = () => {
   };
 
   return (
-    <>
-      <nav className="w-full  flex justify-between content-center p-[20px]  bg-[#c11919]">
-        <div>
+    <div className="navbar  bg-[#c11919]">
+      <div className="navbar-start">
+        <a className=" text-xl hidden md:inline-block">
           <img
             className="w-[50px] ml-[auto]"
             src="./assets/movie-svgrepo-com.svg"
             alt="Logo"
           />
-        </div>
+        </a>
+        <div className="dropdown">
+          <label tabIndex={0} className="btn btn-ghost md:hidden">
+            <img
+              className="w-[50px] ml-[auto]"
+              src="./assets/movie-svgrepo-com.svg"
+              alt="Logo"
+            />
+            <FaCaretDown />
+          </label>
+          <ul
+            tabIndex={0}
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+          >
+            <li>
+              <HeaderLinkButton linkText={"Home"} to={"home"} />
+            </li>
+            <li>
+              <HeaderLinkButton linkText={"Movies"} to={"movies"} />
+            </li>
 
-        <div className="flex justify-evenly w-[60%]">
-          <HeaderLinkButton linkText={"Home"} to={"home"} />
-          <div>
+            <li>
+              <HeaderLinkButton linkText={"About us"} to={"aboutUs"} />
+            </li>
+            <li>
+              <HeaderLinkButton linkText={"Contact us"} to={"contactUs"} />
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="navbar-center hidden md:flex">
+        <ul className="menu menu-horizontal px-1">
+          <li>
+            <HeaderLinkButton linkText={"Home"} to={"home"} />
+          </li>
+          <li>
             <HeaderLinkButton
               linkText={"Movies"}
               to={"movies"}
@@ -34,17 +66,27 @@ const Header = () => {
             {isDropdownOpen && (
               <HeaderDropDown toggleDropdown={toggleDropdown} />
             )}
-          </div>
-          <HeaderLinkButton linkText={"About us"} to={"aboutUs"} />
-          <HeaderLinkButton linkText={"Contact us"} to={"contactUs"} />
-        </div>
+          </li>
 
+          <li>
+            <HeaderLinkButton linkText={"About us"} to={"aboutUs"} />
+          </li>
+
+          <li>
+            <HeaderLinkButton linkText={"Contact us"} to={"contactUs"} />
+          </li>
+        </ul>
+      </div>
+      <div className="navbar-end">
         <Link to={"userProfile"}>
-          <FaUserCircle className="w-7" />
-          <p>@username</p>
+          <label tabIndex="0" className="btn btn-ghost btn-circle avatar">
+            <div className="w-10 rounded-full">
+              <img src="" />
+            </div>
+          </label>
         </Link>
-      </nav>
-    </>
+      </div>
+    </div>
   );
 };
 

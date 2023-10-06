@@ -4,8 +4,7 @@ import PasswordLabelValue from "./PasswordLabelValue";
 const UserProfile = () => {
   return (
     <div className="grid grid-cols-1  md:grid-cols-2">
-      {/* // <div className=" md:flex"> */}
-      <div className="max-w-sm ml-7 rounded overflow-hidden shadow-lg">
+      <div className="card max-w-sm">
         <img
           className="w-full"
           src="https://robohash.org/beataesimiliqueomnis.png?size=50x50&set=set1"
