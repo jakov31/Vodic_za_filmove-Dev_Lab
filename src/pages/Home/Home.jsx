@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import MovieCard from '../components/MovieCard';
-import { getMovies } from '../services/getMovies'; 
-import ModalWindow from './UI/ModalWindow';
-import MovieSlider from '../components/MovieSlider'
+import MovieCard from './MovieCard';
+import { getMovies } from '../../services/getMovies'; 
+import ModalWindow from '../UI/ModalWindow';
+import MovieSlider from './MovieSlider'
 
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
@@ -40,7 +40,7 @@ const HomePage = () => {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-center text-2xl font-semibold mb-4">Recent Movies</h1>
+      <h1 className="text-center text-2xl font-semibold mb-8">Recent Movies</h1>
       <div>
         <MovieSlider data={movies}/>
 
