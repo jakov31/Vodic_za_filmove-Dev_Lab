@@ -6,7 +6,10 @@ const Layout = () => {
   return (
     <>
       <Header />
-      <Outlet />
+      <div className="min-h-screen bg-base-200 p-3">
+        <Outlet />
+      </div>
+
       <Footer />
     </>
   );

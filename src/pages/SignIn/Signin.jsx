@@ -2,15 +2,17 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import ButtonClassic from "../../components/ButtonClassic";
 import InputForm from "../../components/InputForm";
+import { registration } from "../../services/apiRoutes";
 import CountryDropdown from "./CoutnryDropdown";
 
 const SignIn = () => {
   const [registerData, setRegisterData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
+    username: "",
     password: "",
-    confirmPassword: "",
+    password2: "",
+    email: "",
+    first_name: "",
+    last_name: "",
   });
 
   const onChangeDataValue = (e) => {
@@ -21,9 +23,13 @@ const SignIn = () => {
   const submitFormHandler = (e) => {
     e.preventDefault();
 
-    if (registerData.password !== registerData.confirmPassword) {
+    if (registerData.password !== registerData.password2) {
       return;
     }
+
+    const response = registration(JSON.stringify(registerData));
+
+    console.log(response, "reg odg");
 
     console.log("form submited", registerData);
   };
@@ -33,7 +39,7 @@ const SignIn = () => {
       <form onSubmit={submitFormHandler} className="w-full max-w-lg">
         <div className="flex flex-wrap -mx-3 mb-6">
           <InputForm
-            name={"firstName"}
+            name={"first_name"}
             labelText={"First Name"}
             placeholder="Petar"
             type={"text"}
@@ -42,11 +48,19 @@ const SignIn = () => {
           />
 
           <InputForm
-            name={"lastName"}
+            name={"last_name"}
             labelText={"Last Name"}
             placeholder="Petrovic"
             type={"text"}
             design={" md:w-1/2"}
+            onChange={onChangeDataValue}
+          />
+
+          <InputForm
+            name={"username"}
+            labelText={"Username"}
+            type="username"
+            placeholder={"pero334"}
             onChange={onChangeDataValue}
           />
 
@@ -67,7 +81,7 @@ const SignIn = () => {
           />
 
           <InputForm
-            name={"confirmPassword"}
+            name={"password2"}
             labelText={"Confirm password"}
             type="password"
             placeholder={"******************"}
@@ -75,7 +89,7 @@ const SignIn = () => {
             onChange={onChangeDataValue}
           />
         </div>
-        <CountryDropdown />
+        {/* <CountryDropdown /> */}
         <ButtonClassic type={"submit"} buttonText="Register" />
         <NavLink to={"/login"}>
           <button
