@@ -1,5 +1,5 @@
   
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import ModalWindow from '../UI/ModalWindow';
 
 const MovieSlider = ({ data }) => {
@@ -10,22 +10,24 @@ const MovieSlider = ({ data }) => {
 
   const slidesToShow = 3;
   const startIndex=currentIndex;
-  const totalSlides = data.length <=10 ? data.length : data.length=10;
+  const totalSlides = data.length <=10 ? data.length : 10;
   const endIndex=Math.min(currentIndex+slidesToShow, totalSlides);
 
   const visibleSlides = data.slice(startIndex, endIndex);
   
   const handlePrevSlide = () => {
-    const isFirstSlide = currentIndex===0;
-    const newIndex= isFirstSlide ? totalSlides-1 : currentIndex-1;
-    setCurrentIndex(newIndex);
+    setCurrentIndex((prevIndex)=>{
+        const newIndex = prevIndex-1;
+        return newIndex >=0 ? newIndex : totalSlides-1;
+    });
     
   };
 
   const handleNextSlide = () => {
-    const isLastSlide=currentIndex===totalSlides-1;
-    const newIndex = isLastSlide ? 0 : currentIndex+1;
-    setCurrentIndex(newIndex);    
+    setCurrentIndex((prevIndex) => {
+      const newIndex = prevIndex + 1;
+      return newIndex < totalSlides ? newIndex : 0;
+    });
   };
 
   const handleReadMore = (movie)=>{
@@ -43,6 +45,8 @@ const MovieSlider = ({ data }) => {
       handleNextSlide();
     }
   };
+
+  
 
   
 
