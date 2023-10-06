@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import MovieCard from '../components/MovieCard';
-import { getMovies } from '../services/getMovies'; 
-import ModalWindow from './UI/ModalWindow';
+import MovieCard from './MovieCard';
+import { getMovies } from '../../services/getMovies'; 
+import ModalWindow from '../UI/ModalWindow';
+import MovieSlider from './MovieSlider'
 
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
@@ -40,6 +41,11 @@ const HomePage = () => {
   return (
     <div className="bg-black">
     <div className="container mx-auto p-4">
+      <h1 className="text-center text-2xl font-semibold mb-8">Recent Movies</h1>
+      <div>
+        <MovieSlider data={movies}/>
+
+      </div>
       <h1 className="text-center text-2xl font-semibold mb-4">Top Rated Movies</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
         {movies.slice(0, displayedMovies).map((movie) => (
