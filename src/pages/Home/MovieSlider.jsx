@@ -67,7 +67,7 @@ const MovieSlider = ({ data }) => {
             alt={slide.name}
           />
           <h3 className="text-center">{slide.name}</h3>
-          <p className="text-center">{slide.species}</p>
+          <p className="text-center">{slide.description}</p>
           <button
             onClick={() => handleReadMore(slide)}
             className="bg-red-500 hover:bg-red-800 text-white font-semibold py-1 px-6 rounded-full mt-1"

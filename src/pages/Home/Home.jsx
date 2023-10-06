@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import MovieCard from "./MovieCard";
-import { getMovies } from "../../services/getMovies";
+import { getAllMovies } from "../../services/apiRoutes";
 import ModalWindow from "../UI/ModalWindow";
 import MovieSlider from "./MovieSlider";
 import Sidebar from "./SideBar";
@@ -13,9 +13,9 @@ const HomePage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await getMovies.getAllMovies();
-        console.log(response.data.results);
-        setMovies(response.data.results);
+        const response = await getAllMovies();
+        console.log(response.data);
+        setMovies(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }

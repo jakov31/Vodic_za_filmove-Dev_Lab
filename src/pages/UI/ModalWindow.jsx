@@ -23,9 +23,7 @@ const ModalWindow = ({ isOpen, onClose, movie }) => {
             alt={movie.name}
           />
           <div className="flex flex-col mt-5 gap-4">
-            <p>{movie.species}</p>
-            <p>{movie.gender}</p>
-            <p>{movie.status}</p>
+            <p>{movie.description}</p>
           </div>
         </div>
       </div>
