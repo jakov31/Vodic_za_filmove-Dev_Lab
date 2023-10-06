@@ -5,8 +5,7 @@ import ContactUsImage from "./ContactUsImage";
 import TextAreaContactUs from "./TextAreaContactUs";
 const ContactUs = () => {
   const [contactUsData, setContackUsData] = useState({
-    name: "",
-    email: "",
+    username: "",
     message: "",
   });
 
@@ -18,49 +17,51 @@ const ContactUs = () => {
   const submitContactUsHandler = (e) => {
     e.preventDefault();
     console.log(contactUsData, "contactUsData");
-    setContackUsData({ name: "", email: "", message: "" });
+    setContackUsData({ username: "", message: "" });
   };
 
   return (
-    <div className="container my-24 mx-auto md:px-6">
-      <section className="mb-32 text-center">
-        <div className="py-12 md:px-12">
-          <div className="container mx-auto xl:px-32">
-            <div className="grid items-center lg:grid-cols-2">
-              <div className="mb-12 md:mt-12 lg:mt-0 lg:mb-0">
-                <div className="relative z-[1] block rounded-lg bg-[hsla(0,0%,100%,0.55)] px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] backdrop-blur-[30px] dark:bg-[hsla(0,0%,5%,0.7)] dark:shadow-black/20 md:px-12 lg:-mr-14">
-                  <h2 className="mb-12 text-3xl font-bold">Contact us</h2>
-                  <form onSubmit={submitContactUsHandler}>
-                    <InputForm
-                      labelText={"Your name"}
-                      placeholder={"Maria"}
-                      type={"text"}
-                      name={"name"}
-                      onChange={contactUsDataHandler}
-                      value={contactUsData.name}
-                    />
-                    <InputForm
-                      labelText={"Your email"}
-                      placeholder={"maria@gmail.com"}
-                      type={"email"}
-                      name={"email"}
-                      onChange={contactUsDataHandler}
-                      value={contactUsData.email}
-                    />
-
-                    <TextAreaContactUs
-                      onChange={contactUsDataHandler}
-                      value={contactUsData.message}
-                    />
-                    <ButtonClassic buttonText={"Send"} type="submit" />
-                  </form>
-                </div>
-              </div>
-              <ContactUsImage />
-            </div>
-          </div>
+    <div className="hero min-h-screen bg-base-200">
+      <div className="hero-content flex-col md:flex-row-reverse">
+        <div className="text-center md:text-left">
+          <h1 className="text-5xl font-bold">Contact Us</h1>
+          <p className="py-6">We can't know unless you tell us!</p>
         </div>
-      </section>
+        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <form className="card-body" onSubmit={submitContactUsHandler}>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Username</span>
+              </label>
+              <input
+                type="text"
+                placeholder="@Mary233"
+                className="input input-bordered"
+                required
+                name={"username"}
+                onChange={contactUsDataHandler}
+                value={contactUsData.username}
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Message</span>
+              </label>
+
+              <textarea
+                name="message"
+                className="textarea textarea-bordered h-24"
+                placeholder="Your message to us"
+                onChange={contactUsDataHandler}
+                value={contactUsData.message}
+              ></textarea>
+            </div>
+            <div className="form-control mt-6">
+              <ButtonClassic buttonText={"Send"} type={"submit"} />
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   );
 };

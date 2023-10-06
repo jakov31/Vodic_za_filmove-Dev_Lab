@@ -2,10 +2,11 @@ import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import ButtonClassic from "../../components/ButtonClassic";
 import InputForm from "../../components/InputForm";
+import { logIn } from "../../services/apiRoutes";
 
 const Login = () => {
   const [loginData, setLoginData] = useState({
-    email: "",
+    username: "",
     password: "",
   });
 
@@ -17,6 +18,8 @@ const Login = () => {
   const submitLoginHandler = (event) => {
     event.preventDefault();
     console.log("login", loginData);
+    const response = logIn(JSON.stringify(loginData));
+    console.log(response, "odgovor");
   };
 
   return (
@@ -24,10 +27,10 @@ const Login = () => {
       <form onSubmit={submitLoginHandler} className="w-full max-w-lg">
         <div className="flex flex-wrap -mx-3">
           <InputForm
-            name={"email"}
-            labelText={"Email"}
-            placeholder="aaaaa@gmail.com"
-            type={"email"}
+            name={"username"}
+            labelText={"Username"}
+            placeholder="pero323"
+            type={"username"}
             design={" md:w-1/2"}
             onChange={loginDataHandler}
           />
@@ -41,12 +44,6 @@ const Login = () => {
           />
         </div>
         <div className="flex items-center justify-between">
-          {/* <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            type="submit"
-          >
-            Sign In
-          </button> */}
           <ButtonClassic buttonText={"Sign in"} type="submit" />
           <NavLink to={"/register"}>
             <button

@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "../layout/Layout";
-import AboutUs from "../pages/AboutUs";
+import AboutUs from "../pages/AboutUs/AboutUs";
 import ContactUs from "../pages/ContactUs/ContactUs";
 import Home from "../pages/Home";
 import List from "../pages/List/List";
@@ -14,7 +14,7 @@ const routes = createBrowserRouter([
     path: "/",
     element: <Layout />,
     children: [
-      { path:"home",element: <Home />, index: true },
+      { path: "home", element: <Home />, index: true },
       { path: "movies", element: <List /> },
       { path: "aboutUs", element: <AboutUs /> },
       { path: "contactUs", element: <ContactUs /> },
@@ -24,7 +24,7 @@ const routes = createBrowserRouter([
   { path: "login", element: <Login /> },
   { path: "register", element: <SignIn /> },
   { path: "*", element: <p>404</p> },
-  { path:"details", element:<ModalWindow/>}
+  { path: "details", element: <ModalWindow /> },
 ]);
 
 export default routes;
