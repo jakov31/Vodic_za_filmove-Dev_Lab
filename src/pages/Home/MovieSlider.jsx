@@ -93,33 +93,3 @@ const MovieSlider = ({ data }) => {
 };
 
 export default MovieSlider;
-
-// const MovieSlider = ({slides})=>{
-//     const [currentSlide, setCurrentSlide] = useState(0);
-
-//     function handlePrevSlide (){
-//         setCurrentSlide((prevSlide) =>
-//         prevSlide === 0 ? slides.length - 1 : prevSlide - 1
-//       );
-//     };
-
-//     function handleNextSlide(){
-//         setCurrentSlide((prevSlide)=>(prevSlide+1)<slides.length);
-//     };
-
-// return <div className="slider">
-// <button onClick={handlePrevSlide}>&lt;</button>
-// {slides.map((slide, index) => (
-//   <div key={index} className="slide">
-//     <img src={slide.image} alt={slide.name} />
-//     <h3>{slide.name}</h3>
-//     <p>{slide.species}</p>
-//     <button>Read More</button>
-//   </div>
-// ))}
-// <button onClick={handleNextSlide}>&gt;</button>
-// </div>
-
-// }
-
-// export default MovieSlider;

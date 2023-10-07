@@ -16,7 +16,7 @@ const ModalWindow = ({ isOpen, onClose, movie }) => {
         </div>
 
         <div className="modal-content text-center">
-          <h2 className="py-8 font-bold">{movie.name}</h2>
+          <h2 className="py-6 font-bold">{movie.name}</h2>
           <img
             className="mx-auto lg:h-1/2 lg:w-1/3 "
             src={movie.image}

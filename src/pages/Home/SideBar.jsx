@@ -17,7 +17,7 @@ const Sidebar = ({ data }) => {
         {data.slice(0, 3).map((item, index) => (
           <div
             key={index}
-            className="flex flex-row"
+            className="flex flex-row cursor-pointer"
             onClick={() => handleItemClick(item)}
           >
             <div className="">

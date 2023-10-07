@@ -42,12 +42,12 @@ const HomePage = () => {
         <h1 className="text-center text-white text-2xl font-semibold mb-8">
           Recent Movies
         </h1>
-        <div className="flex flex-wrap sm:flex-wrap ">
+        <div className="flex flex-row  sm:flex-wrap ">
           <div className="w-full md:w-3/4 sm:w-3/4">
             <MovieSlider data={movies} />
           </div>
 
-          <div className="w-full md:w-1/4 sm:w-1/4">
+          <div className="w-full md:w-1/4 ">
             <Sidebar data={movies} />
           </div>
         </div>
@@ -55,7 +55,7 @@ const HomePage = () => {
         <h1 className="text-center text-white text-2xl font-semibold mb-4">
           Top Rated Movies
         </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 cursor-pointer">
           {movies.slice(0, displayedMovies).map((movie) => (
             <MovieCard
               key={movie.id}
