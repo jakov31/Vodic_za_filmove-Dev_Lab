@@ -30,7 +30,6 @@ const HomePage = () => {
   };
 
   function handleCloseModal() {
-    console.log(movie);
     setSelectedMovie(null);
   }
 
