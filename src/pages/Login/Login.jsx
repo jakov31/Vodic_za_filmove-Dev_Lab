@@ -31,7 +31,7 @@ const Login = () => {
       console.log(response, "datadata");
       ctx.login(response.data.access);
       // ctx.setUserName(loginData.username);
-      navigate("/home");
+      navigate("/");
     } catch (error) {
       console.log(error);
       setError(true);

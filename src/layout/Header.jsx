@@ -50,7 +50,7 @@ const Header = () => {
       <div className="navbar-center hidden md:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <HeaderLinkButton linkText={"Home"} to={"home"} />
+            <HeaderLinkButton linkText={"Home"} to={"/"} />
           </li>
           <li>
             <HeaderLinkButton
