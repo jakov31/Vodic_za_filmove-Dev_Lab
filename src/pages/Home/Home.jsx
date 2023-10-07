@@ -25,14 +25,17 @@ const HomePage = () => {
   }, []);
 
   const handleMovieClick = (movie) => {
+    console.log(movie);
     setSelectedMovie(movie);
   };
 
   function handleCloseModal() {
+    console.log(movie);
     setSelectedMovie(null);
   }
 
   function handleLoadMore() {
+    console.log(movie);
     setDisplayedMovies((prevDisplayedMovies) => prevDisplayedMovies + 3);
   }
 
