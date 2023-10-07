@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import ButtonClassic from "../../components/ButtonClassic";
 import { getAllMovies } from "../../services/apiRoutes";
-import Card from "./Card";
-import data from "./data";
+import MovieCard from "../Home/MovieCard";
 
 const Main = ({ filter }) => {
   const [numberOfItems, setNumberOfItems] = useState(6);
@@ -39,25 +38,10 @@ const Main = ({ filter }) => {
     <>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3 justify-items-center mt-3">
         {nameFilteredMovies.slice(0, numberOfItems).map((item) => (
-          <Card
-            key={item.id}
-            image={item.image}
-            name={item.name}
-            num_ratings={item.num_ratings}
-            rating={item.rating}
-            year={item.year}
-          />
+          <MovieCard key={item.id} movie={item} />
         ))}
       </div>
       <div className="flex justify-center">
-        {/* <button
-          className=" mt-[1rem] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
-          onClick={() => {
-            setNumberOfItems((prev) => prev + 6);
-          }}
-        >
-          Load more...
-        </button> */}
         {numberOfFIlteredMovies > numberOfItems && (
           <ButtonClassic
             onClick={() => {
