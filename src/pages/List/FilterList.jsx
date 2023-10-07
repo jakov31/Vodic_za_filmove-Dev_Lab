@@ -26,10 +26,6 @@ const FilterList = ({ onFilter, category = "ime" }) => {
     console.log(searchInputValue);
   };
 
-  // useEffect(() => {
-  //   onFilter(searchInputValue);
-  // }, [onFilter, searchInputValue]);
-
   const mouseUpSearchHandler = () => {
     console.log("za ocjenu", rangeInputValue);
   };
@@ -41,14 +37,6 @@ const FilterList = ({ onFilter, category = "ime" }) => {
   return (
     <div className="w-[100%] mt-5 h-[50%] bg-base-300 pt-[3%] rounded-md md:rounded-full shadow-lg ">
       <div className="w-[80%] border-solid border-slate-300 m-auto">
-        {/* <input
-          className="appearance-none block w-1/2 md:w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-          placeholder="Type here"
-          type={"text"}
-          onChange={searchInputHandler}
-        />
-        
-        <ButtonClassic buttonText={"Search"} type="button" /> */}
         <form onSubmit={searchMovieByNameHandler}>
           <input
             type="text"
