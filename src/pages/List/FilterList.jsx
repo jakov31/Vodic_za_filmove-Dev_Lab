@@ -70,7 +70,7 @@ const FilterList = ({ onFilter, category = "ime" }) => {
               value={"ime"}
               className="radio"
             />
-            <label className="text-white">By name</label>
+            <label className="text-[#c11919]">By name</label>
           </div>
           <div className="mt-3 md:ml-3 flex">
             <input
@@ -81,7 +81,7 @@ const FilterList = ({ onFilter, category = "ime" }) => {
               value={"comedy"}
               className="radio"
             />
-            <label className="text-white">Comedy</label>
+            <label className="text-[#c11919]">Comedy</label>
           </div>
           <div className="mt-3 md:ml-3 flex">
             <input
@@ -92,7 +92,7 @@ const FilterList = ({ onFilter, category = "ime" }) => {
               value={"thriler"}
               className="radio"
             />
-            <label className="text-white">Thriler</label>
+            <label className="text-[#c11919]">Thriler</label>
           </div>
           <RangeInput
             defaultValue={rangeInputValue}

@@ -12,7 +12,9 @@ const UserContext = createContext({
 });
 
 export const ContextProvider = (props) => {
-  const [token, setToken] = useState(null);
+  const [token, setToken] = useState(
+    localStorage.getItem("token") ? localStorage.getItem("token") : null
+  );
   const [username, setUserName] = useState("");
   const [isUserAdmin, setIsUserAdmin] = useState(false);
 

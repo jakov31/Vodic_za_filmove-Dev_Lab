@@ -3,7 +3,7 @@ const ButtonClassic = ({ onClick, type, buttonText }) => {
     <button
       onClick={onClick}
       type={type}
-      className=" mt-[1rem] bg-[#320A28] hover:bg-[#681453] text-white font-bold py-2 px-4 rounded-full"
+      className=" mt-[1rem] bg-[#c11919] hover:text-[#c11919] hover:bg-white hover:border-[#c11919] text-white font-bold py-2 px-4 rounded-full"
     >
       {buttonText}
     </button>
