@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import ButtonClassic from "../../components/ButtonClassic";
 import InputForm from "../../components/InputForm";
 import { registration } from "../../services/apiRoutes";
@@ -15,23 +15,31 @@ const SignIn = () => {
     last_name: "",
   });
 
+  const [error, setError] = useState(false);
+
+  const navigate = useNavigate();
+
   const onChangeDataValue = (e) => {
     const { name, value } = e.target;
     setRegisterData((prevValue) => ({ ...prevValue, [name]: value }));
   };
 
-  const submitFormHandler = (e) => {
+  const submitFormHandler = async (e) => {
     e.preventDefault();
 
     if (registerData.password !== registerData.password2) {
       return;
     }
 
-    const response = registration(JSON.stringify(registerData));
+    try {
+      const response = await registration(JSON.stringify(registerData));
+      console.log(response, "reg odg");
 
-    console.log(response, "reg odg");
-
-    console.log("form submited", registerData);
+      console.log("form submited", registerData);
+      navigate("/login");
+    } catch (error) {
+      setError(true);
+    }
   };
 
   return (
@@ -99,6 +107,7 @@ const SignIn = () => {
             /or log in
           </button>
         </NavLink>
+        {error && <p className="text-red-600">Somethig is wrong, try again!</p>}
       </form>
     </div>
   );

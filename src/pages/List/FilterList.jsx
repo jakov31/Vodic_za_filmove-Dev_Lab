@@ -76,20 +76,20 @@ const FilterList = ({ onFilter, category = "ime" }) => {
             <input
               type={"radio"}
               name="category"
-              checked={selectedCategory === "kategorija 2"}
+              checked={selectedCategory === "comedy"}
               onChange={handleOptionChange}
-              value={"kategorija 2"}
+              value={"comedy"}
               className="radio"
             />
-            <label className="text-white">Commedy</label>
+            <label className="text-white">Comedy</label>
           </div>
           <div className="mt-3 md:ml-3 flex">
             <input
               type={"radio"}
               name="category"
-              checked={selectedCategory === "kategorija 3"}
+              checked={selectedCategory === "thriler"}
               onChange={handleOptionChange}
-              value={"kategorija 3"}
+              value={"thriler"}
               className="radio"
             />
             <label className="text-white">Thriler</label>
@@ -106,32 +106,3 @@ const FilterList = ({ onFilter, category = "ime" }) => {
 };
 
 export default FilterList;
-
-// const [nameFilterisCheked, setNameFilterIsChecked] = useState(true);
-// const [isCheked2, setIsChecked2] = useState(false);
-// const [isCheked3, setIsChecked3] = useState(false);
-
-// const handleCheckbox1Change = () => {
-//   setNameFilterIsChecked((prev) => !prev);
-// };
-// const handleCheckbox2Change = () => {
-//   setIsChecked2((prev) => !prev);
-// };
-// const handleCheckbox3Change = () => {
-//   setIsChecked3((prev) => !prev);
-// };
-// console.log(nameFilterisCheked, "by name");
-// console.log(isCheked2, "filter 2");
-// console.log(isCheked3, "filter 3");
-
-{
-  /* <input
-            onChange={handleRatingChange}
-            type={"range"}
-            min={"1"}
-            max={"10"}
-            defaultValue={rangeInputValue}
-            onMouseUp={mouseUpSearchHandler}
-          />
-          <label className="ml-3 font-bold">{rangeInputValue}/10</label> */
-}

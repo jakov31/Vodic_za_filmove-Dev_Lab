@@ -16,7 +16,7 @@ const HeaderDropDown = ({ toggleDropdown }) => {
         }}
         state={{ category: "ime" }}
       >
-        <li>Kategorija 1</li>
+        <li>Comedy</li>
       </Link>
       <Link
         className={LinkStyle}
@@ -25,7 +25,7 @@ const HeaderDropDown = ({ toggleDropdown }) => {
         }}
         state={{ category: "kategorija 2" }}
       >
-        <li>Serije</li>
+        <li>Thriller</li>
       </Link>
       <hr />
       <Link
@@ -35,7 +35,7 @@ const HeaderDropDown = ({ toggleDropdown }) => {
         }}
         state={{ category: "kategorija 3" }}
       >
-        <li>Kategorija 3</li>
+        <li> Serije</li>
       </Link>
     </ul>
   );

@@ -8,11 +8,15 @@ import Login from "../pages/Login/Login";
 import SignIn from "../pages/SignIn/Signin";
 import UserProfile from "../pages/UserProfile/UserProfile";
 import ModalWindow from "../pages/UI/ModalWindow";
+import { ProtectedRoute, PublicRoute } from "./ProtectedAndPublicRoutes";
 
 const routes = createBrowserRouter([
+  { path: "login", element: <PublicRoute element={<Login />} /> },
+  { path: "register", element: <PublicRoute element={<SignIn />} /> },
+
   {
     path: "/",
-    element: <Layout />,
+    element: <ProtectedRoute element={<Layout />} />,
     children: [
       { path: "home", element: <Home />, index: true },
       { path: "movies", element: <List /> },
@@ -21,8 +25,6 @@ const routes = createBrowserRouter([
       { path: "userProfile", element: <UserProfile /> },
     ],
   },
-  { path: "login", element: <Login /> },
-  { path: "register", element: <SignIn /> },
   { path: "*", element: <p>404</p> },
   { path: "details", element: <ModalWindow /> },
 ]);
