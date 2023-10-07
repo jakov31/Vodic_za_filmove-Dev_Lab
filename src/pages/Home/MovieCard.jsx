@@ -8,7 +8,7 @@ const MovieCard = ({ movie, onClick }) => {
       className="max-w-md w-[330px] mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl"
     >
       <div className="md:flex ">
-        <div className="md:flex-shrink-0">
+        <div className="md:flex-shrink-1">
           <img
             className="h-full w-full object-cover md:w-44"
             src={movie.image}
