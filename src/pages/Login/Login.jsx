@@ -23,17 +23,14 @@ const Login = () => {
 
   const submitLoginHandler = async (event) => {
     event.preventDefault();
-    console.log("login", loginData);
 
     try {
       const response = await logIn(JSON.stringify(loginData));
-      console.log(response.data.access, "odgovor");
-      console.log(response, "datadata");
+
       ctx.login(response.data.access);
       // ctx.setUserName(loginData.username);
       navigate("/");
     } catch (error) {
-      console.log(error);
       setError(true);
     }
   };

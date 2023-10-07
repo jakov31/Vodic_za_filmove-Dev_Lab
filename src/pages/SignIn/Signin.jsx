@@ -38,9 +38,7 @@ const SignIn = () => {
 
     try {
       const response = await registration(JSON.stringify(registerData));
-      console.log(response, "reg odg");
 
-      console.log("form submited", registerData);
       navigate("/login");
     } catch (error) {
       setError(true);
