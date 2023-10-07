@@ -81,7 +81,7 @@ const Header = () => {
         <Link to={"userProfile"}>
           <label tabIndex="0" className="btn btn-ghost btn-circle avatar">
             <div className="w-10 rounded-full">
-              <img src="" />
+              <img src="https://robohash.org/beataesimiliqueomnis.png?size=50x50&set=set1" />
             </div>
           </label>
         </Link>

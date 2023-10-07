@@ -62,15 +62,17 @@ const MovieSlider = ({ data }) => {
       {visibleSlides.map((slide, index) => (
         <div
           key={index}
-          className="flex flex-col border-2 rounded-md border-white"
+          className="flex flex-col max-w-[200px] max-h-[200px] border-2 rounded-md border-white"
         >
           <img
-            className="px-4 h-[150px] w-[150px] "
+            className="px-3 mx-auto h-[100px] w-[100px] "
             src={slide.image}
             alt={slide.name}
           />
           <h3 className="text-center text-white">{slide.name}</h3>
-          <p className="text-center text-white">{slide.description}</p>
+          <p className="text-center text-white overflow-hidden">
+            {slide.description}
+          </p>
           <button
             onClick={() => handleReadMore(slide)}
             className="bg-red-500 hover:bg-red-800 text-white font-semibold py-1 px-6 rounded-full mt-1"
