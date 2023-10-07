@@ -20,7 +20,9 @@ const MovieCard = ({ movie, onClick }) => {
             {movie.name}
           </div>
           <div className=" flex flex-col flex-nowrap">
-            <p className="grow my-2 text-gray-500">{movie.description}</p>
+            <p className="my-2 text-gray-500 overflow-ellipsis line-clamp-3">
+              {movie.description}
+            </p>
             <p className="absolute bottom-1 left-1">{movie.year}</p>
             <p className="flex flex-wrap items-center translate-x-0 absolute bottom-1 right-1 text-sm ">
               <MdGrade className="text-[#fde68a]" />

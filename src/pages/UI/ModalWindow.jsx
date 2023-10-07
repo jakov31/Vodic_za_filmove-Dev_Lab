@@ -24,6 +24,7 @@ const ModalWindow = ({ isOpen, onClose, movie }) => {
           />
           <div className="flex flex-col mt-5 gap-4">
             <p>{movie.description}</p>
+            <p>{movie.rating}</p>
           </div>
         </div>
       </div>
