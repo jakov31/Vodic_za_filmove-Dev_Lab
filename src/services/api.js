@@ -1,8 +1,9 @@
 import axios from "axios";
-const token = "s";
+// const token = "s";
 export const axiosInstance = axios.create({
   baseURL: "https://zeljko001.pythonanywhere.com",
-  // timeout: 5000,
+  // Authorization: `Bearer ${token ? token : tokenFirst}`,
+
   headers: {
     "Content-Type": "application/json",
   },
@@ -30,5 +31,3 @@ axiosInstance.interceptors.response.use(
     return Promise.reject(error);
   }
 );
-
-// Authorization: `Bearer ${token ? token : tokenFirst}`,

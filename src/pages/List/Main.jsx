@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import ButtonClassic from "../../components/ButtonClassic";
 import { getAllMovies } from "../../services/apiRoutes";
 import MovieCard from "../Home/MovieCard";
+import Card from "./Card";
 
 const Main = ({ filter }) => {
   const [numberOfItems, setNumberOfItems] = useState(6);
@@ -36,9 +37,9 @@ const Main = ({ filter }) => {
 
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 justify-items-center mt-3">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3 justify-items-center mt-3">
         {nameFilteredMovies.slice(0, numberOfItems).map((item) => (
-          <MovieCard key={item.id} movie={item} />
+          <Card key={item.id} movie={item} />
         ))}
       </div>
       <div className="flex justify-center">
