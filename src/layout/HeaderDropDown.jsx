@@ -14,7 +14,7 @@ const HeaderDropDown = ({ toggleDropdown }) => {
         to={{
           pathname: "/movies",
         }}
-        state={{ category: "ime" }}
+        state={{ category: "comedy" }}
       >
         <li>Comedy</li>
       </Link>
@@ -23,7 +23,7 @@ const HeaderDropDown = ({ toggleDropdown }) => {
         to={{
           pathname: "/movies",
         }}
-        state={{ category: "comedy" }}
+        state={{ category: "thriler" }}
       >
         <li>Thriller</li>
       </Link>
@@ -33,7 +33,7 @@ const HeaderDropDown = ({ toggleDropdown }) => {
         to={{
           pathname: "/movies",
         }}
-        state={{ category: "thriler" }}
+        state={{ category: "serije" }}
       >
         <li> Serije</li>
       </Link>
