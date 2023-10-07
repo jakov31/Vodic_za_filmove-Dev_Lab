@@ -1,25 +1,41 @@
-import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { useState, useContext } from "react";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import ButtonClassic from "../../components/ButtonClassic";
 import InputForm from "../../components/InputForm";
 import { logIn } from "../../services/apiRoutes";
+import UserContext from "../../UserContext";
 
 const Login = () => {
   const [loginData, setLoginData] = useState({
     username: "",
     password: "",
   });
+  const [error, setError] = useState(false);
+
+  const navigate = useNavigate();
+
+  const ctx = useContext(UserContext);
 
   const loginDataHandler = (e) => {
     const { name, value } = e.target;
     setLoginData((prevValue) => ({ ...prevValue, [name]: value }));
   };
 
-  const submitLoginHandler = (event) => {
+  const submitLoginHandler = async (event) => {
     event.preventDefault();
     console.log("login", loginData);
-    const response = logIn(JSON.stringify(loginData));
-    console.log(response, "odgovor");
+
+    try {
+      const response = await logIn(JSON.stringify(loginData));
+      console.log(response.data.access, "odgovor");
+      console.log(response, "datadata");
+      ctx.login(response.data.access);
+      // ctx.setUserName(loginData.username);
+      navigate("/home");
+    } catch (error) {
+      console.log(error);
+      setError(true);
+    }
   };
 
   return (
@@ -54,6 +70,7 @@ const Login = () => {
             </button>
           </NavLink>
         </div>
+        {error && <p className="text-red-600">Somethig is wrong, try again!</p>}
       </form>
     </div>
   );
