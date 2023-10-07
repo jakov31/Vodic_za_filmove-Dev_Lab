@@ -34,17 +34,17 @@ const Header = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
-            <li>
+            <li className="bg-[#c11919] rounded-md mt-1">
               <HeaderLinkButton linkText={"Home"} to={"home"} />
             </li>
-            <li>
+            <li className="bg-[#c11919] rounded-md mt-1">
               <HeaderLinkButton linkText={"Movies"} to={"movies"} />
             </li>
 
-            <li>
+            <li className="bg-[#c11919] rounded-md mt-1">
               <HeaderLinkButton linkText={"About us"} to={"aboutUs"} />
             </li>
-            <li>
+            <li className="bg-[#c11919] rounded-md mt-1">
               <HeaderLinkButton linkText={"Contact us"} to={"contactUs"} />
             </li>
           </ul>
