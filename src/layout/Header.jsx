@@ -17,17 +17,13 @@ const Header = () => {
         <a className=" text-xl hidden md:inline-block">
           <img
             className="w-[50px] ml-[auto]"
-            src="./assets/movie-svgrepo-com.svg"
+            src="./src/assets/movie-svgrepo-com.svg"
             alt="Logo"
           />
         </a>
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost md:hidden">
-            <img
-              className="w-[50px] ml-[auto]"
-              src="./assets/movie-svgrepo-com.svg"
-              alt="Logo"
-            />
+            <img className="w-[50px] ml-[auto]" alt="Logo" />
             <FaCaretDown />
           </label>
           <ul
