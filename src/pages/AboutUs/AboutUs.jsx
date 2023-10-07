@@ -7,19 +7,19 @@ const AboutUs = () => {
         name={"Jakov Janjušević"}
         description={"Frontend Developer | React JS"}
         gitHubLink={"https://github.com/jakov31"}
-        image={"./src/assets/Jakov.jpg"}
+        image={"./assets/Jakov.jpg"}
       />
       <AboutUsSinglePersonCard
         name={"Željko Bolević"}
         description={"Backend Developer | Django"}
         gitHubLink={"https://github.com/zeljko001"}
-        image={"./src/assets/Željko.jpg"}
+        image={"./assets/Željko.jpg"}
       />
       <AboutUsSinglePersonCard
         name={"Predrag Radićević"}
         description={"Frontend Developer | React JS"}
         gitHubLink={"https://github.com/Djaponijum"}
-        image={"./src/assets/Pedja.jpg"}
+        image={"./assets/Pedja.jpg"}
       />
     </div>
   );
