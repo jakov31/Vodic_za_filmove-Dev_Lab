@@ -25,6 +25,7 @@ const HomePage = () => {
   }, []);
 
   const handleMovieClick = (movie) => {
+    console.log(movie);
     setSelectedMovie(movie);
   };
 
@@ -33,6 +34,7 @@ const HomePage = () => {
   }
 
   function handleLoadMore() {
+    console.log(movie);
     setDisplayedMovies((prevDisplayedMovies) => prevDisplayedMovies + 3);
   }
 
