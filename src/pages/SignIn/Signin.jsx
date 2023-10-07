@@ -31,6 +31,8 @@ const SignIn = () => {
     setError(false);
 
     if (registerData.password !== registerData.password2) {
+      setError(true);
+      setLoading(false);
       return;
     }
 

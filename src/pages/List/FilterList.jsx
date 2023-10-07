@@ -22,8 +22,6 @@ const FilterList = ({ onFilter, category = "ime" }) => {
   const searchMovieByNameHandler = (e) => {
     e.preventDefault();
     onFilter(searchInputValue);
-
-    console.log(searchInputValue);
   };
 
   const mouseUpSearchHandler = () => {

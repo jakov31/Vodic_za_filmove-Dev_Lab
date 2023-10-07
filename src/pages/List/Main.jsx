@@ -15,7 +15,7 @@ const Main = ({ filter }) => {
       setLoading(true);
       try {
         const response = await getAllMovies();
-        console.log(response.data);
+
         setMovies(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -26,8 +26,6 @@ const Main = ({ filter }) => {
     fetchData();
   }, []);
 
-  console.log(movies);
-
   const nameFilteredMovies = movies.filter((item) => {
     return filter.toLowerCase() === ""
       ? item
@@ -35,8 +33,6 @@ const Main = ({ filter }) => {
   });
 
   const numberOfFIlteredMovies = nameFilteredMovies.length;
-
-  console.log(numberOfFIlteredMovies, "broj filmove");
 
   return (
     <>
