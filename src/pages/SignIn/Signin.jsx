@@ -16,6 +16,7 @@ const SignIn = () => {
   });
 
   const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
 
@@ -26,6 +27,8 @@ const SignIn = () => {
 
   const submitFormHandler = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    setError(false);
 
     if (registerData.password !== registerData.password2) {
       return;
@@ -40,6 +43,7 @@ const SignIn = () => {
     } catch (error) {
       setError(true);
     }
+    setLoading(false);
   };
 
   return (
@@ -98,6 +102,8 @@ const SignIn = () => {
           />
         </div>
         {/* <CountryDropdown /> */}
+        {loading && <p>Loading...</p>}
+        {error && <p className="text-red-600">Somethig is wrong, try again!</p>}
         <ButtonClassic type={"submit"} buttonText="Register" />
         <NavLink to={"/login"}>
           <button
@@ -107,7 +113,6 @@ const SignIn = () => {
             /or log in
           </button>
         </NavLink>
-        {error && <p className="text-red-600">Somethig is wrong, try again!</p>}
       </form>
     </div>
   );
