@@ -21,7 +21,7 @@ const Header = () => {
         <a className=" text-xl hidden md:inline-block">
           <img
             className="w-[50px] ml-[auto]"
-            src="./src/assets/movie-svgrepo-com.svg"
+            src="./assets/movie-svgrepo-com.svg"
             alt="Logo"
           />
         </a>
