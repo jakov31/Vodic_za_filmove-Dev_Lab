@@ -27,8 +27,8 @@ const HeaderDropDown = ({ toggleDropdown }) => {
       >
         <li>Thriller</li>
       </Link>
-      <hr />
-      <Link
+      {/* <hr /> */}
+      {/* <Link
         className={LinkStyle}
         to={{
           pathname: "/movies",
@@ -36,7 +36,7 @@ const HeaderDropDown = ({ toggleDropdown }) => {
         state={{ category: "serije" }}
       >
         <li> Serije</li>
-      </Link>
+      </Link> */}
     </ul>
   );
 };

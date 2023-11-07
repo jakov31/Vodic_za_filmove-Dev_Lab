@@ -1,8 +1,9 @@
 import axios from "axios";
-// const token = "s";
+import useGetToken from "../Hooks/useGetToken";
+const token = useGetToken();
 export const axiosInstance = axios.create({
   baseURL: "https://zeljko001.pythonanywhere.com",
-  // Authorization: `Bearer ${token ? token : tokenFirst}`,
+  Authorization: `Bearer ${token ? token : ""}`,
 
   headers: {
     "Content-Type": "application/json",

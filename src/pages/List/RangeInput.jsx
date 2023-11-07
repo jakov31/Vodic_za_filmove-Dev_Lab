@@ -5,7 +5,7 @@ const RangeInput = ({ onChange, defaultValue, onMouseUp }) => {
         onChange={onChange}
         type={"range"}
         min={"1"}
-        max={"10"}
+        max={"5"}
         defaultValue={defaultValue}
         onMouseUp={onMouseUp}
         className="range"
@@ -16,11 +16,11 @@ const RangeInput = ({ onChange, defaultValue, onMouseUp }) => {
         <span>3</span>
         <span>4</span>
         <span>5</span>
-        <span>6</span>
+        {/* <span>6</span>
         <span>7</span>
         <span>8</span>
         <span>9</span>
-        <span>10</span>
+        <span>10</span> */}
       </div>
     </div>
   );

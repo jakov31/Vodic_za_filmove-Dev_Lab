@@ -1,4 +1,5 @@
 import { axiosInstance } from "../services/api";
+import useGetToken from "../Hooks/useGetToken";
 
 export const getAllMovies = async () => await axiosInstance.get("/movies");
 
@@ -12,3 +13,7 @@ export const registration = async (registrationData) => {
 
 // let res = await logIn();
 // res.data;
+
+export const getCategories = async () => {
+  return await axiosInstance.get("/categories/");
+};

@@ -1,6 +1,11 @@
+import { useState } from "react";
 import { MdGrade } from "react-icons/md";
+import ButtonClassic from "../../components/ButtonClassic";
+import Modal from "../../components/Modal";
 
 const Card = ({ movie }) => {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <div className="card w-96 bg-base-100 shadow-xl ml-2">
       <figure>
@@ -19,6 +24,20 @@ const Card = ({ movie }) => {
             {movie.rating}
           </p>
         </div>
+        <ButtonClassic
+          buttonText={"More..."}
+          onClick={() => setShowModal(true)}
+        />
+        {showModal && (
+          <Modal
+            onClick={() => {
+              setShowModal((prev) => !prev);
+            }}
+            description={movie.description}
+            title={movie.name}
+            image={movie.image}
+          />
+        )}
       </div>
     </div>
   );

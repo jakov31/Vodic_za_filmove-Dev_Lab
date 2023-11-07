@@ -27,8 +27,9 @@ const Login = () => {
     try {
       const response = await logIn(JSON.stringify(loginData));
 
+      console.log(response);
       ctx.login(response.data.access);
-      // ctx.setUserName(loginData.username);
+      ctx.setUserName(loginData.username);
       navigate("/");
     } catch (error) {
       setError(true);

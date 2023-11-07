@@ -27,6 +27,7 @@ export const ContextProvider = (props) => {
       setIsUserAdmin(true);
       setUserName(username);
     } else {
+      setIsUserAdmin(false);
       setUserName(username);
     }
   };
@@ -44,7 +45,7 @@ export const ContextProvider = (props) => {
   const contextValue = {
     admin: isUserAdmin,
     username: usernameValue,
-    setUsername: setUserNameHandler,
+    setUserName: setUserNameHandler,
     token: token,
     isUserLogedIn: userIsLoggedIn,
     login: loginHandler,

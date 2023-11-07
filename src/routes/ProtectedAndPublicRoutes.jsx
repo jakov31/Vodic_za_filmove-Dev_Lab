@@ -11,5 +11,11 @@ export const ProtectedRoute = ({ element }) => {
 export const PublicRoute = ({ element }) => {
   const { isUserLogedIn } = useContext(UserContext);
 
-  return isUserLogedIn ? <Navigate to="/home" /> : <>{element}</>;
+  return isUserLogedIn ? <Navigate to="/" /> : <>{element}</>;
+};
+
+export const AdminRoute = ({ element }) => {
+  const { admin } = useContext(UserContext);
+
+  return admin ? <>{element}</> : <Navigate to="/" />;
 };

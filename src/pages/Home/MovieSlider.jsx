@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import ButtonClassic from "../../components/ButtonClassic";
 import ModalWindow from "../UI/ModalWindow";
 
 const MovieSlider = ({ data }) => {
@@ -62,7 +63,7 @@ const MovieSlider = ({ data }) => {
       {visibleSlides.map((slide, index) => (
         <div
           key={index}
-          className="flex flex-col max-w-[200px] max-h-[200px] border-2 rounded-md border-white"
+          className="flex flex-col max-w-[200px] bg-black max-h-[200px] border-2 rounded-md border-white"
         >
           <img
             className="px-3 mx-auto h-[100px] w-[100px] "
@@ -73,12 +74,16 @@ const MovieSlider = ({ data }) => {
           <p className="text-center text-white overflow-hidden">
             {slide.description}
           </p>
-          <button
+          {/* <button
             onClick={() => handleReadMore(slide)}
             className="bg-red-500 hover:bg-red-800 text-white font-semibold py-1 px-6 rounded-full mt-1"
           >
             Read More
-          </button>
+          </button> */}
+          <ButtonClassic
+            buttonText={"More..."}
+            onClick={() => handleReadMore(slide)}
+          />
         </div>
       ))}
       <button

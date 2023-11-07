@@ -1,32 +1,35 @@
+import { useContext } from "react";
 import { useState, useEffect } from "react";
 import ButtonClassic from "../../components/ButtonClassic";
+import ShowsContext from "../../Context/ShowsContext";
 import { getAllMovies } from "../../services/apiRoutes";
 import MovieCard from "../Home/MovieCard";
 import Card from "./Card";
 
 const Main = ({ filter }) => {
-  const [loading, setLoading] = useState(false);
+  const showCtx = useContext(ShowsContext);
+  // const [loading, setLoading] = useState(false);
   const [numberOfItems, setNumberOfItems] = useState(6);
 
-  const [movies, setMovies] = useState([]);
+  // const [movies, setMovies] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      try {
-        const response = await getAllMovies();
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     setLoading(true);
+  //     try {
+  //       const response = await getAllMovies();
 
-        setMovies(response.data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-      setLoading(false);
-    };
+  //       setMovies(response.data);
+  //     } catch (error) {
+  //       console.error("Error fetching data:", error);
+  //     }
+  //     setLoading(false);
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
-  const nameFilteredMovies = movies.filter((item) => {
+  const nameFilteredMovies = showCtx.movies.filter((item) => {
     return filter.toLowerCase() === ""
       ? item
       : item.name.toLowerCase().startsWith(filter);
@@ -37,7 +40,7 @@ const Main = ({ filter }) => {
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3 justify-items-center mt-3">
-        {loading && <p className="text-center">Loading...</p>}
+        {showCtx.loadingMovies && <p className="text-center">Loading...</p>}
 
         {nameFilteredMovies.slice(0, numberOfItems).map((item) => (
           <Card key={item.id} movie={item} />

@@ -19,7 +19,7 @@ const UserProfile = () => {
             src="https://robohash.org/beataesimiliqueomnis.png?size=50x50&set=set1"
           />
           <div className="px-6 py-4">
-            <div className="font-bold text-xl mb-2">@username</div>
+            <div className="font-bold text-xl mb-2">{`@${ctx.username}`}</div>
           </div>
         </div>
         <div>
